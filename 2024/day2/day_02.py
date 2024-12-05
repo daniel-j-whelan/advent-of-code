@@ -22,18 +22,20 @@ def part_one(lines: list) -> int:
     Returns:
         distance (int): the total distance between the left and right lists
     """
-    safe_count = 0
+    ### to do
     
-    for report in [line.split(" ") for line in lines]:
-        safe = True
-        ascending = []
-        for i in range(1, len(report)):
-            if (abs(int(report[i]) - int(report[i-1])) > 3) or (int(report[i]) == int(report[i-1])):
-                safe = False
-                break
-            ascending.append(True) if int(report[i]) > int(report[i-1]) else ascending.append(False)
-        if (all(ascending) or not any(ascending)) and safe:
-            safe_count += 1
+    # safe_count = 0
+    
+    # for report in [line.split(" ") for line in lines]:
+    #     safe = True
+    #     ascending = []
+    #     for i in range(1, len(report)):
+    #         if (abs(int(report[i]) - int(report[i-1])) > 3) or (int(report[i]) == int(report[i-1])):
+    #             safe = False
+    #             break
+    #         ascending.append(True) if int(report[i]) > int(report[i-1]) else ascending.append(False)
+    #     if (all(ascending) or not any(ascending)) and safe:
+    #         safe_count += 1
   
 
 def part_two(lines: list) -> int:

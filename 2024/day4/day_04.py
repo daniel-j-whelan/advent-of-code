@@ -133,5 +133,22 @@ def part_one(lines: list) -> int:
     return total
 
 def part_two(lines: list) -> int:
-    # to do
-    ...
+    counter = 0
+    
+    for i, line in enumerate(lines):
+        if i < 1 or i > (len(lines) - 2):
+            continue
+        for j, char in enumerate(line):
+            if j < 1 or j > (len(line) - 2):
+                continue
+            if char == "A":
+                top_left = lines[i-1][j-1]
+                top_right = lines[i-1][j+1]
+                bot_left = lines[i+1][j-1]
+                bot_right = lines[i+1][j+1]
+                if (
+                    ((top_left == "S" and bot_right == "M") or (top_left == "M" and bot_right == "S")) and
+                    ((top_right == "S" and bot_left == "M") or (top_right == "M" and bot_left == "S"))
+                ):
+                    counter += 1
+    return counter
